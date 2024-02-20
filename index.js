@@ -23,7 +23,7 @@ exports.handler = async (event) => {
                     "Access-Control-Allow-Origin": "*", // This should be restricted to specific domains in production
                     "Access-Control-Allow-Credentials": true
                 },
-                body: JSON.stringify({ /* Your response body */ })
+                body: JSON.stringify(response.Item)
             };
         } else {
             // Game session not found
