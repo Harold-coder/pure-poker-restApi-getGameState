@@ -19,7 +19,11 @@ exports.handler = async (event) => {
             // Game session found, returning the details
             return {
                 statusCode: 200,
-                body: JSON.stringify(response.Item)
+                headers: {
+                    "Access-Control-Allow-Origin": "*", // This should be restricted to specific domains in production
+                    "Access-Control-Allow-Credentials": true
+                },
+                body: JSON.stringify({ /* Your response body */ })
             };
         } else {
             // Game session not found
